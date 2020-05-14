@@ -1,0 +1,61 @@
+<div class="container_in_sign_in">
+
+
+
+<%= form_for @user, url: users_page_path(@user) do |f| %>
+
+
+
+
+<div class="col-md-10 order-md-3">
+<h2>Редактирование аккаунта</h2><br>
+
+<form class="needs-validation" novalidate>
+<div class="row">
+<div class="col-md-6 mb-3">
+<%= f.email_field :email, autofocus: true, autocomplete: "Email",class:"form-control sing_up_field", placeholder:"Email" %>
+<br>
+<br>
+<br>
+<small>Это ваш новый Shop ID.</small>
+</div>
+
+<div class="col-md-6 mb-3">
+<%= f.text_field :username, placeholder:"Username",class:"form-control sing_up_field" %>
+</div>
+</div>
+
+
+
+
+
+
+
+<div class="field">
+<% if @minimum_password_length %>
+
+<% end %>
+<%= f.password_field :password, autocomplete: "new-password", placeholder:"Пароль",class:"form-control sing_up_field_password" %>
+</div>
+<br>
+<br>
+<br>
+<div class="field">
+<%= f.password_field :password_confirmation, autocomplete: "new-password",placeholder:"Подтвердите пароля",class:"form-control sing_up_field_password" %>
+</div>
+<br>
+<br><br>
+<%= f.text_field :roll ,class:"form-control sing_up_field_password" %>
+<br>
+<br>
+<br>
+
+
+<div class="actions btn_color_sign_up">
+<%= f.submit "Продолжить" ,class:"btn btn-primary sing_up_btn"%>
+</div>
+<% end %>
+<br>
+<br>
+
+</div>

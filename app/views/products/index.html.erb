@@ -1,0 +1,154 @@
+  <div class="container">
+  <div class="row">
+  <div class="new_product_index">
+    <%=link_to 'Новинки',products_path %>
+  </div>
+<%@products_new.each do |product| %>
+
+   <div class="col-md-3 space ">
+          <div class=" mb-3  ">
+          <%=link_to  product_path(product) do %>
+          <div class="scale">
+             <%= image_tag product.image_url, size: '350x320'%>
+          </div>
+          <% end %>
+             <div class="product-card__type">
+             <%= product.name%>
+             
+            </div>
+               
+          
+            <div class="product_name">
+           <a><strong> <%=link_to  product_path(product) do %>
+         <%= product.firma%>  <br>
+          <p> <%= product.cost%> BYN <del> <%=product.sale%></del> </p>
+           <% end %> </strong></a>
+         </div>
+          </div> 
+    </div>
+
+<% end %>
+
+          </div>
+
+</div>
+<br>
+<br>
+<br>
+<br>
+ <div class="container">
+  <div class="row">
+
+  <div class="hit_product_index">
+    <%=link_to "Хиты",products_path %>
+  </div>
+          <%@products_hit.each do |product| %>
+            
+       <div class="col-md-3 space ">
+          <div class=" mb-3  ">
+          <%=link_to  product_path(product) do %>
+          <div class="scale">
+             <%= image_tag product.image_url, size: '350x320'%>
+          </div>
+          <% end %>
+             <div class="product-card__type">
+             <%= product.name%>
+             
+            </div>
+               
+          
+            <div class="product_name">
+           <a><strong> <%=link_to  product_path(product) do %>
+                              <%= product.firma%>  <br>
+                           <p> <%= product.cost%>BYN<del> <%=product.sale%></del> </p>
+                       <% end %> 
+           </strong></a>
+        </div>
+          </div> 
+    </div>
+
+<% end %>     
+
+
+          </div>
+
+</div>
+<br>
+
+<br>
+ <div class="container"> 
+ <hr>
+  <div class="row">
+  <div class="all_product_index">
+    <%=link_to 'Все продукты',products_path %>
+  </div>
+<%@products.each do |product| %>
+
+   <div class="col-md-3 space ">
+          <div class=" mb-3  ">
+          <%=link_to  product_path(product) do %>
+          <div class="scale">
+             <%= image_tag product.image_url, size: '350x320'%>
+          </div>
+          <% end %>
+             <div class="product-card__type">
+             <%= product.name%>
+             
+            </div>
+               
+          
+            <div class="product_name">
+           <a><strong> <%=link_to  product_path(product) do %>
+         <%= product.firma%>  <br>
+          <p> <%= product.cost%> BYN <del> <%=product.sale%></del> </p>
+           <% end %> </strong></a>
+         </div>
+          </div> 
+    </div>
+
+<% end %>
+
+
+          </div>
+<br> <br><div class="paginate">
+<%= will_paginate @products,renderer: 'BootstrapPaginationHelper::LinkRenderer' %>
+</div>
+</div>
+<br>
+<br>
+<footer>
+<hr>
+    <div class="icon_footer ">
+      
+      <ul class="list-unstyled text-small">
+       
+        <li><a class="text-white" href="#">Сustomer days</a></li>
+        <li><a class="text-white" href="#">The shops</a></li>
+        <li><a class="text-white" href="#">Shipping and payment</a></li>
+         <li><a class="text-white" href="#">Work with us</a></li>
+      </ul>
+    </div>
+    <div class="center_footer_text">
+          <a><%=link_to  products_path do %>
+                        <svg width="26" height="26" viewBox="0 0 26 26" fill="#fff" xmlns="http://www.w3.org/2000/svg">
+                        <g id="favorite_border_24px">
+                        <path fill="#fff" id="icon/action/favorite_border_24px" fill-rule="evenodd" clip-rule="evenodd" d="M13 5.32458C14.1808 3.93792 15.99 3.06042 17.875 3.06042C21.2116 3.06042 23.8333 5.68208 23.8333 9.01875C23.8333 13.1104 20.156 16.4449 14.5845 21.4971L14.5708 21.5096L13 22.9396L11.4291 21.5204L11.3864 21.4816C5.83115 16.4333 2.16663 13.1033 2.16663 9.01875C2.16663 5.68208 4.78829 3.06042 8.12496 3.06042C10.01 3.06042 11.8191 3.93792 13 5.32458ZM13 20.0146L13.1083 19.9062C18.265 15.2371 21.6666 12.1496 21.6666 9.01875C21.6666 6.85208 20.0416 5.22708 17.875 5.22708C16.2066 5.22708 14.5816 6.29958 14.0183 7.78375H11.9925C11.4183 6.29958 9.79329 5.22708 8.12496 5.22708C5.95829 5.22708 4.33329 6.85208 4.33329 9.01875C4.33329 12.1496 7.73496 15.2371 12.8916 19.9062L13 20.0146Z" fill="black" fill-opacity="0.54"/>
+                        </g>
+                        </svg>
+                       <% end %></a>
+    </div>
+ 
+  
+    <div class="right_text_footer">
+      
+      <ul class="list-unstyled text-small">
+      
+        <li><a class="text-white" href="#">Team</a></li>
+        <li><a class="text-white" href="#">Locations</a></li>
+        <li><a class="text-white" href="#">Privacy</a></li>
+        <li><a class="text-white" href="#">Terms</a></li>
+      </ul>
+    </div>
+   
+  
+</footer>

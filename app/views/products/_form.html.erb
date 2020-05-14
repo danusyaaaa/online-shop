@@ -1,0 +1,51 @@
+<div class="container">
+<%= form_for @product, html: { multipart: true } do |f| %>
+
+<%if @product.errors.any?%>
+  <%@product.errors.full_messages.each do |msg| %>
+    <div class="alert alert-danger">
+       <%=msg%>
+    </div>
+  <%end%>
+<%end%>
+
+
+    <div class="input-group">
+       <%=f.text_field :name,class: "form-control",type:"text",placeholder: "name"%>
+    </div><br>
+
+        <div class="field">
+          <%=f.text_area :body,class: "form-control",type:"text",placeholder: "about product "%><br>   
+        </div>
+
+        
+        <div class="field">
+          <%=f.text_field :cost,class: "form-control",type:"text",placeholder: "cost"%><br>
+        </div>
+
+        <div class="field">
+          <%=f.text_field :firma,class: "form-control",type:"text",placeholder: "firma"%><br>
+        </div>
+
+         <div class="field">
+          <%=f.number_field :volume,class: "form-control",type:"text",placeholder: "volume"%><br>
+        </div>
+
+      <div class="field">
+          <%=f.number_field :sale,class: "form-control",type:"text",placeholder: "sale"%><br>        
+        </div>
+
+        <div class="field">
+          <%=f.file_field :image%><br>
+        </div>
+         <div class="field">
+          <%=f.collection_select :category_id,Category.order(:name),:id,:name,{include_blank: true},class:"form-control select"%><br>
+        </div>
+
+       
+        <div class="field">
+          <%=f.submit "Add product ",class: "btn btn-outline-dark" %>
+        </div>
+
+      <%end%>
+      </div>

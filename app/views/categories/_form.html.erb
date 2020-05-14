@@ -1,0 +1,37 @@
+
+
+<div class="container">
+
+<div class="container-category">
+  <div class="p-4">
+        <h4 class="font-italic">Categories</h4>
+        <ol class="list-unstyled mb-0">
+
+          <% Category.all.each do |category| %>
+          <li><a><%=link_to category.name,category_path(category)%> </a></li>
+          <% end %>
+        </ol>
+      </div>
+</div>
+
+
+
+
+
+
+
+
+             <%= form_for @category do |f| %>
+
+                 <div class="field">
+                   <%=f.text_field :name ,class: "form-control log_in",type:"text",placeholder: "Name category"%>
+                 <div>
+<br/>
+<br/>
+<br/>
+               <div class="field">
+                  <%=f.submit "Add new category" ,class:"btn btn-primary btn_log_in"%>
+               </div>
+          
+            <%end%>
+</div>

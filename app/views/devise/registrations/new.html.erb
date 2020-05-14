@@ -1,0 +1,56 @@
+
+
+<div class="container_in_sign_in">
+
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+<div class="col-md-10 order-md-3">
+<h2>Создание аккаунта</h2><br>
+      
+      <form class="needs-validation" novalidate>
+        <div class="row">
+          <div class="col-md-6 mb-3">
+             <%= f.email_field :email, autofocus: true, autocomplete: "Email",class:"form-control sing_up_field", placeholder:"Email" %>
+           <br>
+           <br>
+           <br>
+              <small>Это ваш новый  Shop ID.</small>
+          </div>
+        
+          
+        </div>
+     <% if User.count==0%>
+       
+        <%= f.hidden_field :roll , value:"admin" %>
+      <%else%>
+        <%=f.hidden_field :roll ,value:"user" %>
+      <%end%>
+
+  <div class="field">
+    <% if @minimum_password_length %>
+  
+    <% end %>
+    <%= f.password_field :password, autocomplete: "new-password", placeholder:"Пароль",class:"form-control sing_up_field_password" %>
+  </div>
+<br>
+<br>
+<br>
+  <div class="field">
+    <%= f.password_field :password_confirmation, autocomplete: "new-password",placeholder:"Подтвердите пароля",class:"form-control sing_up_field_password" %>
+  </div>
+<br>
+<br>
+<br><div class="as-signin-info">
+Для доступа ко всем услугам магазина достаточно одной учетной записи.
+</div>
+
+  <div class="actions btn_color_sign_up">
+     <%= f.submit "Продолжить" ,class:"btn btn-primary sing_up_btn"%>
+  </div>
+<% end %>
+<br>
+<br>
+<br>
+<%=link_to  "У вас уже есть Shop ID?",new_user_session_path,class:"btn_color_sign_up"  %>
+</div>

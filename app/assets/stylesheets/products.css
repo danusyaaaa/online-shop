@@ -1,0 +1,452 @@
+a{
+  color:black;
+  text-decoration: none;
+}
+
+
+a:hover {
+  text-decoration: none;
+  stroke: #c2a283; /* Цвет фона под ссылкой */ 
+  stroke-width: 2px;
+  stroke-opacity: .8; 
+  color: #c2a283;
+} 
+
+
+.container_in_sign_up{
+
+  position: absolute;
+  left: 300px;
+  width: 600px;
+}
+.log_in{
+
+  position: absolute;
+  height: 56px;
+  width: 410px;
+}
+.btn_log_in{
+
+  position: absolute;
+  height: 56px;
+  width: 410px;
+
+}
+.as-signin-info {
+  width: 420px;
+  font-family: SF Pro Text,SF Pro Icons,AOS Icons,Helvetica Neue,Helvetica,Arial,sans-serif;
+  margin-bottom: 35px;
+}
+.container_in_sign_in{
+
+  position: absolute;
+  left: 300px;
+  width: 600px;
+}
+.sing_up_field{
+
+
+position: absolute;
+height: 56.1px;
+width: 213px;
+}
+.sing_up_field_password{
+
+
+  position: absolute;
+  height: 56.1px;
+  width: 460px;
+ 
+
+ }
+
+
+ .sing_up_btn{
+
+
+  position: absolute;
+  height: 56px;
+  width: 460px;
+ 
+
+ }
+.container-category{
+  position: absolute;
+  left: 650px;
+  top:100px;
+
+
+
+}
+.space{
+ 
+  margin: 40px;
+  border-spacing: 30px;
+ 
+  }
+.product-card__type {
+  font-size: 11pt;
+  text-align: left;
+ 
+}
+.product_name {
+  position: absolute;
+  width: 370px;
+  text-align: left;
+ 
+  line-height: 1.45;
+  letter-spacing: 1.4px;
+  overflow: hidden;
+}
+
+.container_index{
+
+  position: absolute;
+  left: 70px;
+
+  
+}
+del {
+	text-decoration: line-through;
+  color: #b3b3b3;
+}
+.scale {
+  display: inline-block; /* Строчно-блочный элемент */
+  overflow: hidden; /* Скрываем всё за контуром */
+ }
+ .scale img {
+  transition: 3s; /* Время эффекта */
+  display: block; /* Убираем небольшой отступ снизу */
+ }
+ .scale img:hover {
+  transform: scale(1.2); /* Увеличиваем масштаб */
+ }
+ strong{
+  font-weight: 650;
+  line-height: 1.4;
+  color: #000;
+  font-size: 20px;
+ }
+ .new_product_index{
+  position: absolute;
+  left: 900px;
+   top:120px;
+  font-size: 35px;
+
+    flex-grow: 1;
+    text-transform: lowercase;
+    letter-spacing: -.2px;
+    font-weight: 500;
+    line-height: 1.1;
+    transition-duration: .5s;
+ }
+ .new_product_index:hover{
+
+  text-decoration: none;
+  stroke: #c2a283; /* Цвет фона под ссылкой */ 
+  stroke-width: 2px;
+  stroke-opacity: .8; 
+  color: #c2a283;
+  transition-duration: .5s;
+ }
+ .hit_product_index{
+  position: absolute;
+  left: 900px;
+  top:650px;
+  font-size: 35px;
+
+    flex-grow: 1;
+    text-transform: lowercase;
+    letter-spacing: -.2px;
+    font-weight: 500;
+    line-height: 1.1;
+    transition-duration: .5s;
+
+ }
+
+ .icon_footer{
+  position: absolute;
+  left: 350px;
+ 
+
+
+ }
+ .center_footer_text{
+  position: absolute;
+  left: 750px;
+
+ }
+ .right_text_footer{
+  position: absolute;
+  left: 1100px;
+
+  
+ }
+ .text_sign_up{
+  font-size: 14px;
+  line-height: 1.42859;
+  font-weight: 400;
+  letter-spacing: -.016em;
+  font-family: SF Pro Text,SF Pro Icons,AOS Icons,Helvetica Neue,Helvetica,Arial,sans-serif;
+  margin-bottom: 15px;
+
+ }
+ .btn_color_sign_up{
+  background: transparent;
+  border: 0;
+  color: #06c;
+  font-size: inherit;
+  line-height: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
+  padding: 0;
+  vertical-align: inherit;
+  cursor: pointer;
+ }
+ .btn_color_sign_up:hover{
+  color: #06c;
+
+ }
+
+
+.title_show{
+  position: absolute;
+  left: 800px;
+  top: 160px;
+  font-weight: 500px;
+
+  max-height: 32px;
+  font-size: 14px;
+
+}
+.firma_name{
+
+  position: absolute;
+  left: 400px;
+  top: 100px;
+  width: 600px;
+  
+  font-size: 45px;
+
+  line-height: 1.1;
+  letter-spacing: -.2px
+}
+.btn_add_card{
+
+  position: absolute;
+  height: 52px;
+  width: 302px;
+  top:500px;
+  left: 1040px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+ 
+  border: 0;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 11px;
+  letter-spacing: 1.4px;
+  cursor: pointer;
+  height: 50px;
+  line-height: 50px;
+  color: #fff;
+  background: #000;
+  
+
+}
+.btn_add_card:hover{
+
+  color: #fff;
+ 
+  background: #c2a283;
+}
+.price{
+  position: absolute;
+  height: 52px;
+  width: 302px;
+  top:400px;
+  left: 1050px;
+
+  letter-spacing: -.5px;
+
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 46px;
+
+}
+.volume_product{
+
+  position: absolute;
+  height: 52px;
+  width: 302px;
+  top:320px;
+  left: 1050px;
+
+
+
+  border: 1px solid #000;
+  line-height: 50px;
+  text-align: center;
+
+
+
+  width: 50px;
+  height: 50px;
+  margin-right: 15px;
+}
+.volume_product_count{
+  position: absolute;
+  height: 52px;
+  width: 302px;
+  top:335px;
+  left: 1115px;
+
+
+}
+.have_in_shop{
+
+  position: absolute;
+  height: 52px;
+  width: 302px;
+  top:550px;
+  left: 987px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  font-size: 11px;
+  line-height: 16px;
+  font-weight: 500;
+  letter-spacing: 1.4px;
+ 
+  padding: 17px 10px;
+ 
+
+}
+footer{
+ 
+  left: 0;
+  bottom: 0;
+  height:200px;
+  width: 100%;
+  background-color: #000;
+  color: white;
+  text-align: center;
+}
+
+.about_product{
+  position: absolute;
+  height: 402px;
+  width: 702px;
+  top:950px;
+  left: 587px;
+ 
+}
+.about_text{
+  font-size: 30px;
+  line-height: 1.1;
+  letter-spacing: -.2px
+
+}
+.name_in_about{
+  font-weight: bolder;
+  line-height: 1.1;
+  letter-spacing: -.5px
+
+}
+
+.text_in_about{
+  font-size: 17px;
+  line-height: 1.6;
+  letter-spacing: -.1px
+
+}
+.container2{
+  position: absolute;
+  left: 170px;
+  top:1300px;
+  
+
+}
+.defferent_product{
+  position: absolute;
+  left: 600px;
+  font-size: 35px;
+
+  flex-grow: 1;
+  text-transform: lowercase;
+  letter-spacing: -.2px;
+  font-weight: 500;
+  line-height: 16px;
+  transition-duration: .5s;
+}
+.footer_show{
+  position: absolute;
+  top:2100px;
+
+}
+ .delete_edit_show{
+  position: absolute;
+  height: 52px;
+  width: 302px;
+  top:550px;
+  left: 1045px;
+
+ }
+ .all_product_index{
+ position: absolute;
+  left: 900px;
+   top:1200px;
+  font-size: 35px;
+
+    flex-grow: 1;
+    text-transform: lowercase;
+    letter-spacing: -.2px;
+    font-weight: 500;
+    line-height: 1.1;
+    transition-duration: .5s;
+ }
+ .all_product_index:hover{
+
+  text-decoration: none;
+  stroke: #c2a283; /* Цвет фона под ссылкой */ 
+  stroke-width: 2px;
+  stroke-opacity: .8; 
+  color: #c2a283;
+  transition-duration: .5s;
+ }
+.paginate{
+  position: absolute;
+  left: 670px;
+ 
+}
+.pagination > li > a
+{
+background-color: white;
+color: #000000;
+}
+
+.pagination > li > a:focus,
+.pagination > li > a:hover,
+.pagination > li > span:focus,
+.pagination > li > span:hover
+{
+color: #000000;
+background-color: #eee;
+border-color: #ddd;
+}
+
+.pagination > .active > a
+{
+color: white;
+background-color: #000000 !Important;
+border: solid 1px #000000 !Important;
+}
+
+.pagination > .active > a:hover
+{
+background-color: #000000 !Important;
+border: solid 1px #000000;
+}

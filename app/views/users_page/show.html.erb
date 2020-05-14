@@ -1,0 +1,27 @@
+<div class="container">
+Список покупок
+<table class="table table-striped">
+<thead>
+<tr>
+
+<th scope="col">Email</th>
+<th scope="col">Телефон</th>
+<th scope="col">Адресс</th>
+<th scope="col">Дата</th>
+<th scope="col">Удалить из списка</th>
+</tr>
+</thead>
+<tbody>
+<% for bought in @boughts%>
+<tr>
+<td><%=bought.email%></td>
+<td><%=bought.number_tel%></td>
+<td><%=bought.street%></td>
+<td><%=bought.created_at%></td>
+<td> <%=link_to "Удалить", bought_path(bought),class:"text-dark", method: :delete, data:{ confirm: 'Хотите удалить ?' }%>
+</td>
+</tr>
+<% end %>
+</tbody>
+</table>
+</div>

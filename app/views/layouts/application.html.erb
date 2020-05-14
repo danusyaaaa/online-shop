@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>App</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag 'https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css'%>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+       <div class="container">
+
+                <% if user_signed_in? %>
+         <header class="blog-header py-3">
+
+
+                    <div class="row flex-nowrap justify-content-between align-items-center">
+                      <div class="col-4 pt-1">
+                       <div class="text-muted"><%=Time.zone.now.strftime("%B %d, %Y")%></div>
+                      </div>
+                      
+                      <div class="col-2 text-center">
+                       <a><%=link_to  products_path do %>
+                        <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g id="favorite_border_24px">
+                        <path id="icon/action/favorite_border_24px" fill-rule="evenodd" clip-rule="evenodd" d="M13 5.32458C14.1808 3.93792 15.99 3.06042 17.875 3.06042C21.2116 3.06042 23.8333 5.68208 23.8333 9.01875C23.8333 13.1104 20.156 16.4449 14.5845 21.4971L14.5708 21.5096L13 22.9396L11.4291 21.5204L11.3864 21.4816C5.83115 16.4333 2.16663 13.1033 2.16663 9.01875C2.16663 5.68208 4.78829 3.06042 8.12496 3.06042C10.01 3.06042 11.8191 3.93792 13 5.32458ZM13 20.0146L13.1083 19.9062C18.265 15.2371 21.6666 12.1496 21.6666 9.01875C21.6666 6.85208 20.0416 5.22708 17.875 5.22708C16.2066 5.22708 14.5816 6.29958 14.0183 7.78375H11.9925C11.4183 6.29958 9.79329 5.22708 8.12496 5.22708C5.95829 5.22708 4.33329 6.85208 4.33329 9.01875C4.33329 12.1496 7.73496 15.2371 12.8916 19.9062L13 20.0146Z" fill="black" fill-opacity="0.54"/>
+                        </g>
+                        </svg>
+                       <% end %></a>
+                      </div>
+                      <div class="col-7 d-flex justify-content-end align-items-center">
+                      <% if current_user.roll=="admin" %>
+                         <a ><%= link_to "Пользователи",users_page_index_path%>&nbsp;</a>  
+                           <a ><%= link_to "Добавить продукт",new_product_path%>&nbsp;</a>
+                           <a ><%= link_to "Добавить категорию",new_category_path%>&nbsp;</a>
+                           <a ><%= link_to "Все категории",categories_path%></a>
+                       <% end %>
+                        <a class="p-2"><%=link_to  wains_path do %>
+                       <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                       <g id="add_shopping_cart_24px">
+                       <path id="icon/action/add_shopping_cart_24px" fill-rule="evenodd" clip-rule="evenodd" d="M14.5 9.89583H12.4167V6.77083H9.29167V4.6875H12.4167V1.5625H14.5V4.6875H17.625V6.77083H14.5V9.89583ZM6.17708 21.3542C6.17708 20.2083 7.10417 19.2708 8.25 19.2708C9.39583 19.2708 10.3333 20.2083 10.3333 21.3542C10.3333 22.5 9.39583 23.4375 8.25 23.4375C7.10417 23.4375 6.17708 22.5 6.17708 21.3542ZM18.6667 19.2708C17.5208 19.2708 16.5938 20.2083 16.5938 21.3542C16.5938 22.5 17.5208 23.4375 18.6667 23.4375C19.8125 23.4375 20.75 22.5 20.75 21.3542C20.75 20.2083 19.8125 19.2708 18.6667 19.2708ZM17.1562 14.0625H9.39583L8.25 16.1458H20.75V18.2292H8.25C6.66667 18.2292 5.66667 16.5313 6.42708 15.1354L7.83333 12.5938L4.08333 4.6875H2V2.60417H5.40625L9.84375 11.9792H17.1562L21.1875 4.6875L23 5.6875L18.9792 12.9896C18.625 13.6354 17.9375 14.0625 17.1562 14.0625Z" fill="black" fill-opacity="0.54"/>
+                          </g>
+                       </svg>
+                       <%end%>
+                     <a class="p-2"> <%=link_to  users_page_path(current_user) do %>
+                        <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M12.5 2.08334C6.75004 2.08334 2.08337 6.75001 2.08337 12.5C2.08337 18.25 6.75004 22.9167 12.5 22.9167C18.25 22.9167 22.9167 18.25 22.9167 12.5C22.9167 6.75001 18.25 2.08334 12.5 2.08334ZM7.3646 19.0417C7.81252 18.1042 10.5417 17.1875 12.5 17.1875C14.4584 17.1875 17.1979 18.1042 17.6354 19.0417C16.2188 20.1667 14.4375 20.8333 12.5 20.8333C10.5625 20.8333 8.78127 20.1667 7.3646 19.0417ZM12.5 15.1042C14.0209 15.1042 17.6355 15.7188 19.125 17.5313C20.1875 16.1354 20.8334 14.3958 20.8334 12.5C20.8334 7.90626 17.0938 4.16667 12.5 4.16667C7.9063 4.16667 4.16671 7.90626 4.16671 12.5C4.16671 14.3958 4.81255 16.1354 5.87505 17.5313C7.36463 15.7188 10.9792 15.1042 12.5 15.1042ZM12.5 6.25001C10.4792 6.25001 8.85421 7.87501 8.85421 9.89585C8.85421 11.9167 10.4792 13.5417 12.5 13.5417C14.5209 13.5417 16.1459 11.9167 16.1459 9.89585C16.1459 7.87501 14.5209 6.25001 12.5 6.25001ZM10.9375 9.89584C10.9375 10.7604 11.6355 11.4583 12.5 11.4583C13.3646 11.4583 14.0625 10.7604 14.0625 9.89584C14.0625 9.03126 13.3646 8.33334 12.5 8.33334C11.6355 8.33334 10.9375 9.03126 10.9375 9.89584Z" fill="black" fill-opacity="0.54"/>
+                        </svg>
+                     <% end %></a>
+                     <%if current_user.roll=="user"%>
+                        <a class="text-muted" href="#" aria-label="Search">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="mx-3" role="img" viewBox="0 0 24 24" focusable="false"><title>Search</title><circle cx="10.5" cy="10.5" r="7.5"/><path d="M21 21l-5.2-5.2"/></svg>
+                        </a>
+                        <%end%>
+                      <a class="p-2"><%=link_to destroy_user_session_path ,method: :delete do %>
+                       <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <g id="power_settings_new_24px">
+                      <path id="icon/action/power_settings_new_24px" fill-rule="evenodd" clip-rule="evenodd" d="M11.4583 3.125H13.5417V13.5417H11.4583V3.125ZM17.0937 6.86458L18.5729 5.38542C20.5938 7.10417 21.875 9.64583 21.875 12.5C21.875 17.6771 17.6771 21.875 12.5 21.875C7.32292 21.875 3.125 17.6771 3.125 12.5C3.125 9.64583 4.40625 7.10417 6.42708 5.38542L7.89583 6.85417C6.26042 8.1875 5.20833 10.2188 5.20833 12.5C5.20833 16.5312 8.46875 19.7917 12.5 19.7917C16.5312 19.7917 19.7917 16.5312 19.7917 12.5C19.7917 10.2188 18.7396 8.1875 17.0937 6.86458Z" fill="black" fill-opacity="0.54"/>
+                      </g>
+                      </svg>
+                     <% end %></a>
+                       
+                      </div>
+                    </div>
+         </header>
+              
+                <%  else %>
+                
+              <header class="blog-header py-3">
+
+
+                    <div class="row flex-nowrap justify-content-between align-items-center">
+                      <div class="col-4 pt-1">
+                       <div class="text-muted"><%=Time.zone.now.strftime("%B %d, %Y")%></div>
+                      </div>
+                      
+                      <div class="col-4 text-center">
+                       <a><%=link_to  products_path do %>
+                        <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g id="favorite_border_24px">
+                        <path id="icon/action/favorite_border_24px" fill-rule="evenodd" clip-rule="evenodd" d="M13 5.32458C14.1808 3.93792 15.99 3.06042 17.875 3.06042C21.2116 3.06042 23.8333 5.68208 23.8333 9.01875C23.8333 13.1104 20.156 16.4449 14.5845 21.4971L14.5708 21.5096L13 22.9396L11.4291 21.5204L11.3864 21.4816C5.83115 16.4333 2.16663 13.1033 2.16663 9.01875C2.16663 5.68208 4.78829 3.06042 8.12496 3.06042C10.01 3.06042 11.8191 3.93792 13 5.32458ZM13 20.0146L13.1083 19.9062C18.265 15.2371 21.6666 12.1496 21.6666 9.01875C21.6666 6.85208 20.0416 5.22708 17.875 5.22708C16.2066 5.22708 14.5816 6.29958 14.0183 7.78375H11.9925C11.4183 6.29958 9.79329 5.22708 8.12496 5.22708C5.95829 5.22708 4.33329 6.85208 4.33329 9.01875C4.33329 12.1496 7.73496 15.2371 12.8916 19.9062L13 20.0146Z" fill="black" fill-opacity="0.54"/>
+                        </g>
+                        </svg>
+                       <% end %></a>
+                      </div>
+                      <div class="col-4 d-flex justify-content-end align-items-center">
+                        <a class="text-muted" href="#" aria-label="Search">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="mx-3" role="img" viewBox="0 0 24 24" focusable="false"><title>Search</title><circle cx="10.5" cy="10.5" r="7.5"/><path d="M21 21l-5.2-5.2"/></svg>
+                        </a>
+                      <%=link_to  new_user_session_path do %>
+                        <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M12.5 2.08334C6.75004 2.08334 2.08337 6.75001 2.08337 12.5C2.08337 18.25 6.75004 22.9167 12.5 22.9167C18.25 22.9167 22.9167 18.25 22.9167 12.5C22.9167 6.75001 18.25 2.08334 12.5 2.08334ZM7.3646 19.0417C7.81252 18.1042 10.5417 17.1875 12.5 17.1875C14.4584 17.1875 17.1979 18.1042 17.6354 19.0417C16.2188 20.1667 14.4375 20.8333 12.5 20.8333C10.5625 20.8333 8.78127 20.1667 7.3646 19.0417ZM12.5 15.1042C14.0209 15.1042 17.6355 15.7188 19.125 17.5313C20.1875 16.1354 20.8334 14.3958 20.8334 12.5C20.8334 7.90626 17.0938 4.16667 12.5 4.16667C7.9063 4.16667 4.16671 7.90626 4.16671 12.5C4.16671 14.3958 4.81255 16.1354 5.87505 17.5313C7.36463 15.7188 10.9792 15.1042 12.5 15.1042ZM12.5 6.25001C10.4792 6.25001 8.85421 7.87501 8.85421 9.89585C8.85421 11.9167 10.4792 13.5417 12.5 13.5417C14.5209 13.5417 16.1459 11.9167 16.1459 9.89585C16.1459 7.87501 14.5209 6.25001 12.5 6.25001ZM10.9375 9.89584C10.9375 10.7604 11.6355 11.4583 12.5 11.4583C13.3646 11.4583 14.0625 10.7604 14.0625 9.89584C14.0625 9.03126 13.3646 8.33334 12.5 8.33334C11.6355 8.33334 10.9375 9.03126 10.9375 9.89584Z" fill="black" fill-opacity="0.54"/>
+                        </svg>
+                     <% end %>
+                       
+                      </div>
+                    </div>
+              </header>
+                <% end %>
+                    <div class="nav-scroller py-1 mb-2">
+                      <nav class="nav d-flex justify-content-between">
+                     
+                         <% Category.all.each do |category| %>
+                             <li><a class="p-2 "><%=link_to category.name,category_path(category)%> </a></li>
+                         <% end %>
+                      </nav>
+                    </div>
+                  <hr>
+            </div>
+
+
+
+
+
+    <%= yield %>
+  </body>
+</html>

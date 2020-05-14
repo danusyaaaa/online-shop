@@ -1,0 +1,40 @@
+
+  <div class="container">
+  <div class="row">
+  <div class="new_product_index">
+    <%=link_to @category.name,products_path %>
+  </div>
+<% @category.products.each do |product| %>
+
+   <div class="col-md-3 space ">
+          <div class=" mb-3  ">
+          <%=link_to  product_path(product) do %>
+          <div class="scale">
+             <%= image_tag product.image_url, size: '350x320'%>
+          </div>
+          <% end %>
+             <div class="product-card__type">
+             <%= product.name%>
+             
+            </div>
+               
+          
+            <div class="product_name">
+           <a><strong> <%=link_to  product_path(product) do %>
+         <%= product.firma%>  <br>
+          <p> <%= product.cost%> BYN <del> <%=product.sale%></del> </p>
+           <% end %> </strong></a>
+         </div>
+          </div> 
+    </div>
+
+<% end %>
+
+          </div>
+
+</div>
+
+
+
+
+

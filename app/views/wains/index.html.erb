@@ -1,0 +1,64 @@
+
+
+
+<div class="card_name">
+           Корзина
+        </div>
+ 
+  <div class="container_card_index">
+ 
+<table class="table table-borderless">
+  <thead>
+    <tr>
+      
+      <th scope="col">Количество товара <%=@wains.count%></th>
+      <th scope="col">Количество</th>
+      <th scope="col">Цена</th>
+       <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+   <% for wain  in @wains%>
+    <tr>
+     
+      <td> <%=image_tag(Wain.progress(wain), height: '207', width: '184')%>
+           <%=wain.name%>
+          
+      </td>
+      <td><br><br><br><div class="card_count">&emsp;&emsp;<%=wain.count%></div></td>
+      <td><br><br><br><div class="cost_one_product"><%=wain.cost%> BYN.</div></td>
+    <td> </td> 
+      <td> 
+      <br><br><br>
+       <%if wain.id_product!=nil%>
+           <%  product=Product.where(product_id: wain.id_product)%>
+
+ <%= link_to  [wain.product_id, wain], method: :delete, data:{ confirm: 'Хотите удалить ?' } do %>
+     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="clear_24px">
+<path id="icon/content/clear_24px" d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41Z" fill="black" fill-opacity="0.54"/>
+</g>
+</svg>
+
+<%end%>
+         
+<%end%>
+</td>
+
+
+    </tr>
+    
+ <%end%>
+
+   
+  </tbody>
+</table>
+<div class="summ_card">
+ Сумма: <%=Wain.summCost(@wains)%> BYN.
+  <%=link_to "Оформить заказ",new_bought_path,class:" btn btn_card text_btn"%>
+ <br>
+  <br>
+   <br>
+</div>
+
+</div>

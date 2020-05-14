@@ -1,0 +1,130 @@
+.text_field_card{
+
+    position: absolute;
+    left: 600px;
+    width: 600px;
+
+}
+.image_product_in_new_card{
+
+    position: absolute;
+    left: 200px;
+    
+
+}.price_card{
+    
+    letter-spacing: -.5px;
+  
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 46px;
+  
+  }
+
+  .summ_card{
+    position: absolute;
+    width: 789px;
+    height: 242px;
+    left: 728px;
+   
+    
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 42px;
+    
+    color: #000000;
+  }
+  .btn_card{
+  
+    width: 276px;
+    height: 54px;
+    left: 1069px;
+    top: 713px;
+    
+    background: #000000;
+    border-radius: 7px;
+  }
+  .text_btn{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 28px;
+    
+    color: #FFFFFF;
+
+  }
+  .text_btn:hover{
+
+    color: #FFFFFF;
+  }
+  .card_count{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 12px;
+    /* identical to box height, or 50% */
+    
+    
+    color: #000000;
+  }
+  .cost_one_product{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 28px;
+    
+    color: #000000;
+    
+  }
+  .card_name{
+    position: absolute;
+   
+    left:107px;
+    
+   
+    
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 42px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    
+    color: #000000;
+    
+  }
+  .container_card_index{
+
+    position: absolute;
+    width: 1320px;
+    height: 1300;
+    left: 100px;
+   top:180px;
+
+  }
+  .card_bought_left{
+    position: absolute;
+    width: 400px;
+    
+    left: 900px;
+  
+
+
+  }
+  .product_name_wains{
+
+    position: absolute;
+  width: 570px;
+  text-align: left;
+ 
+  line-height: 1.45;
+  letter-spacing: 1.4px;
+  overflow: hidden;
+  }

@@ -1,0 +1,175 @@
+
+<nav class="col-md-2 d-none d-md-block bg-light sidebar">
+      <div class="sidebar-sticky">
+        <ul class="nav flex-column  p-2">
+        
+       <p class="text-muted"> Каталог и товары</div>
+
+  <% for category  in Category.all%>
+
+          <li class="nav-item p-2">
+             <%=link_to category.name,category,class:"text-primary"%>
+          </li>
+  <%end%>  
+       </ul>
+       <ul class="nav flex-column  p-2">
+       <a class="text-muted">Расширенный поиск</a>
+       <%= form_for @search, html: {class: "pure-form"} do |f|%>
+      <li class="nav-item p-2">
+              <%=f.label :"Поиск"%>
+              <%=f.text_field :keywords,class:"form-control "%>
+     </li>
+      <li class="nav-item p-2">
+              <%=f.label :"Категория"%>
+              <%=f.collection_select :category_id,Category.order(:name),:id,:name,{include_blank: true},class:"form-control "%><br>
+      </li>
+      <li class="nav-item p-2">
+              <%=f.label :"Максимальная цена"%>
+              <%=f.text_field :max_price ,size: 10,class:"form-control "%>
+      </li>   
+       <li class="nav-item p-2">
+              <%=f.label :"Минимальная цена"%><br>
+               <%=f.text_field :min_price ,size: 10,class:"form-control "%>
+       </li><br>  
+       <li class="nav-item pl-5">
+            <%=f.submit "Применить",class:"btn btn-outline-dark"%>
+       </li> 
+         <li class="nav-item pl-5">
+         <br>
+        <%=link_to "Очистить фильтр",new_search_path,class:"text-muted"%>
+         </li> 
+<%end %>
+ </ul>
+      </div>
+    </nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style>
+
+
+   .outline:hover {
+    background: #F9F6F1;
+    
+   }
+ .btn_index{
+
+    position: absolute;
+    left: 140px;
+    top: 300px;
+    width: 170px;
+    height: 30px;
+   background: #D7B399;
+    outline: none;
+   outline: none !important;
+   
+ }
+ .text_btn{
+font-family: Montserrat;
+font-style: normal;
+font-weight: normal;
+font-size: 16px;
+line-height: 20px;
+/* identical to box height */
+
+letter-spacing: 0.03em;
+ outline: none;
+color: #FFFFFF;
+
+ }
+.text_btn:hover {
+
+  color: #FFFFFF;
+}
+  
+  </style>
+
+
+
+<div class="container_search">
+
+ 
+      <div class="row">
+      
+    <% @search.search_products.each do |product| %>
+ 
+        <div class="col-md-3 outline probel ">
+          <div class=" mb-5  ">
+        
+  
+            <%= image_tag product.image_url, size: '230x230'%>
+           
+            
+              <p class="card-text "><h5><%=link_to product.name,product_path(product),class:"text_index_product text-dark"%></h5></p>
+              <div class="cost">
+               <%=product.cost%>BYN.
+               </div>
+                <%=link_to "В корзину ",new_product_wain_path(product),class:" btn_index text_btn text-center"%>
+          </div>
+        </div>
+      
+         
+          <%end%>
+        </div>
+   </div>
+         
+ <footer>
+    <div class="row">
+      <div class="col-12 col-md">
+        <img class="mb-2" src="/docs/4.4/assets/brand/bootstrap-solid.svg" alt="" width="24" height="24">
+        <small class="d-block mb-3 text-muted">&copy; 2017-2019</small>
+      </div>
+      <div class="col-6 col-md">
+        <h5>Features</h5>
+        <ul class="list-unstyled text-small">
+          <li><a class="text-muted" href="#">Cool stuff</a></li>
+          <li><a class="text-muted" href="#">Random feature</a></li>
+          <li><a class="text-muted" href="#">Team feature</a></li>
+          <li><a class="text-muted" href="#">Stuff for developers</a></li>
+          <li><a class="text-muted" href="#">Another one</a></li>
+          <li><a class="text-muted" href="#">Last time</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-md">
+        <h5>Resources</h5>
+        <ul class="list-unstyled text-small">
+          <li><a class="text-muted" href="#">Resource</a></li>
+          <li><a class="text-muted" href="#">Resource name</a></li>
+          <li><a class="text-muted" href="#">Another resource</a></li>
+          <li><a class="text-muted" href="#">Final resource</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-md">
+        <h5>About</h5>
+        <ul class="list-unstyled text-small">
+          <li><a class="text-muted" href="#">Team</a></li>
+          <li><a class="text-muted" href="#">Locations</a></li>
+          <li><a class="text-muted" href="#">Privacy</a></li>
+          <li><a class="text-muted" href="#">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>        
+   
+
+ 
+
+  
+
+
+

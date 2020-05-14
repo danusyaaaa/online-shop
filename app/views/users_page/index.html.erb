@@ -1,0 +1,35 @@
+
+<div class="container">
+<table class="table table-striped">
+  <thead>
+    <tr>
+      
+      <th scope="col">Email</th>
+      <th scope="col">Username</th>
+      <th scope="col">Role</th>
+      <th scope="col">Redaction</th>
+      <th scope="col">Destroy</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+  <% User.all.each do |user| %>
+    <tr>
+      <td><%=user.email%></td>
+      <td><%=user.username%></td>
+      <td><%=user.roll%></td>
+      <td><%= link_to "Edit", edit_users_page_path(user) %></td>
+      <td><%= link_to users_page_path(user), method: :delete, data:{ confirm: 'Хотите удалить ?' } do %>
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="clear_24px">
+<path id="icon/content/clear_24px" d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41Z" fill="black" fill-opacity="0.54"/>
+</g>
+</svg>
+
+<%end%></td>
+    </tr>
+  <% end %>
+  
+  </tbody>
+</table>
+</div>
